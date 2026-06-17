@@ -69,14 +69,6 @@ src\Polivoks.Desktop\bin\Debug\net10.0-windows\Polivoks.Desktop.exe
 dotnet test tests\Polivoks.Tests\Polivoks.Tests.csproj
 ```
 
-## Репозиторий
-
-GitHub:
-
-```text
-https://github.com/Art-Stea1th/Polivoks
-```
-
 ## Ссылки
 
 - Исторические материалы и схемы Formanta Polivoks.
