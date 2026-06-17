@@ -47,7 +47,7 @@
 ## Сборка
 
 ```powershell
-cd D:\Projects\Media\Audio\Polivoks
+cd ..\Polivoks
 dotnet build src\Polivoks.Desktop\Polivoks.Desktop.csproj
 ```
 
@@ -82,8 +82,7 @@ https://github.com/Art-Stea1th/Polivoks
 - Исторические материалы и схемы Formanta Polivoks.
 - Hyperreal Polivoks schematics archive: [http://machines.hyperreal.org/manufacturers/Formanta/Polivoks/schematics/](http://machines.hyperreal.org/manufacturers/Formanta/Polivoks/schematics/)
 - Erica Synths DIY/open module references: [https://github.com/erica-synths/diy-eurorack](https://github.com/erica-synths/diy-eurorack)
-- Cell-Universe как визуальный референс из предыдущего проекта автора.
 
 ## Disclaimer
 
-Этот проект — независимый программный синтезатор, вдохновлённый историческим Formanta Поливокс. Это не официальный продукт, не endorsed-эмуляция оригинального производителя и не проект, связанный с правообладателями.
+Этот проект — независимый программный синтезатор, вдохновлённый историческим Formanta Поливокс. Это не официальный продукт, не эмуляция оригинального производителя и не проект, связанный с правообладателями.
