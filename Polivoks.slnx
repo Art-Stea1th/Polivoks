@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Polivoks.Audio/Polivoks.Audio.csproj" />
+    <Project Path="src/Polivoks.Core/Polivoks.Core.csproj" />
+    <Project Path="src/Polivoks.Desktop/Polivoks.Desktop.csproj" />
+    <Project Path="src/Polivoks.Resources/Polivoks.Resources.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Polivoks.Tests/Polivoks.Tests.csproj" />
+  </Folder>
+</Solution>

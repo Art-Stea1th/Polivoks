@@ -1,0 +1,93 @@
+<Window x:Class="Polivoks.Desktop.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="clr-namespace:Polivoks.Resources.Localization;assembly=Polivoks.Resources"
+        xmlns:models="clr-namespace:Polivoks.Core.Models;assembly=Polivoks.Core"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+        Title="{loc:Loc SettingsTitle}"
+        Width="520"
+        Height="420"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#FF070708"
+        Foreground="#FFE4F3F4">
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome CaptionHeight="31"
+                            CornerRadius="0"
+                            GlassFrameThickness="0"
+                            ResizeBorderThickness="0"
+                            UseAeroCaptionButtons="False"/>
+    </shell:WindowChrome.WindowChrome>
+    <Border BorderBrush="#FF1B1B1D" BorderThickness="1" Background="#FF070708">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Height="31" Background="#FF0F0F10" BorderBrush="#FF151516" BorderThickness="0,0,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{loc:Loc SettingsTitle}"
+                           VerticalAlignment="Center"
+                           Margin="8,0,0,1"
+                           FontSize="11"
+                           IsHitTestVisible="False"/>
+                <Button Grid.Column="1"
+                        Click="OnCloseClick"
+                        Style="{StaticResource WindowChromeCloseButton}"
+                        shell:WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Image Width="10" Height="11" Margin="0,1,0,0" RenderOptions.EdgeMode="Aliased">
+                        <Image.Source>
+                            <DrawingImage Drawing="{StaticResource ChromeCloseIcon}"/>
+                        </Image.Source>
+                    </Image>
+                </Button>
+            </Grid>
+        </Border>
+    <Border Margin="10" Padding="14" Background="#FF0B1218" BorderBrush="Transparent" BorderThickness="0" CornerRadius="0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="{loc:Loc OutputDevice}" Margin="0,0,0,4"/>
+            <ComboBox ItemsSource="{Binding OutputDevices}"
+                      SelectedValuePath="Id"
+                      DisplayMemberPath="Name"
+                      SelectedValue="{Binding SelectedDeviceId}"/>
+            <Button Content="{loc:Loc TestOutput}" Command="{Binding TestOutputCommand}" Margin="0,8,0,0"/>
+
+            <TextBlock Text="{loc:Loc SampleRate}" Margin="0,12,0,4"/>
+            <ComboBox ItemsSource="{Binding SampleRates}" SelectedItem="{Binding SampleRate}"/>
+
+            <TextBlock Text="{loc:Loc BitDepth}" Margin="0,12,0,4"/>
+            <ComboBox ItemsSource="{Binding BitDepths}" SelectedItem="{Binding BitDepth}"/>
+
+            <TextBlock Text="{loc:Loc BufferMs}" Margin="0,12,0,4"/>
+            <Slider Minimum="5" Maximum="50" Value="{Binding BufferMilliseconds}" TickFrequency="5" IsSnapToTickEnabled="True"/>
+
+            <CheckBox Content="{loc:Loc ExclusiveMode}" IsChecked="{Binding UseExclusiveMode}" Margin="0,12,0,0"/>
+
+            <TextBlock Text="{loc:Loc Language}" Margin="0,12,0,4"/>
+            <ComboBox ItemsSource="{Binding Languages}"
+                      DisplayMemberPath="DisplayName"
+                      SelectedItem="{Binding SelectedLanguage}"/>
+
+            <TextBlock Text="MP3 bitrate" Margin="0,12,0,4"/>
+            <ComboBox ItemsSource="{Binding Mp3Bitrates}" SelectedItem="{Binding DefaultMp3BitrateKbps}"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" Text="{Binding StatusMessage}" Margin="0,8,0,8" TextWrapping="Wrap"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="{loc:Loc Save}" Command="{Binding SaveCommand}" MinWidth="90" Margin="0,0,8,0"/>
+            <Button Content="{loc:Loc Cancel}" IsCancel="True" MinWidth="90"/>
+        </StackPanel>
+    </Grid>
+    </Border>
+    </DockPanel>
+    </Border>
+</Window>

@@ -1,0 +1,10 @@
+<UserControl x:Class="Polivoks.Resources.Controls.PianoKeyboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="Root"
+             Height="96">
+    <Grid>
+        <UniformGrid x:Name="WhiteKeys" Rows="1"/>
+        <Canvas x:Name="BlackKeys"/>
+    </Grid>
+</UserControl>
